@@ -1,2 +1,2 @@
 # StarGuide
-Code for web app
+Code for app and device or anything relative to project
