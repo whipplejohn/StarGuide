@@ -1,0 +1,13 @@
+-Axel
+  Hello team, Ive uploaded a quick design template.
+  
+  Ive included just a quick idea of what pages we might have.
+      1.) Intro Page
+        - Menu Pgae, with different links to other pages.
+      2.) Control Page
+        - Physical Arduino Control 
+      3.) INformation about constellation page.
+      
+      These are my ideas, let me know what we should add or delete or what to include or not include.
+      
+-------------------------------------------------------------------------------------------------------------------------------------------------------
