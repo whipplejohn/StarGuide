@@ -43,44 +43,45 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    final ButtonStyle style = TextButton.styleFrom(
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-    );
+
+    //final ButtonStyle style = TextButton.styleFrom(
+    //    foregroundColor: Theme.of(context).colorScheme.onPrimary,
+    //);
+
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
         actions: <Widget>[
-          TextButton(
-            style: style,
+
+          IconButton(
+
+            icon: (const Icon(Icons.bluetooth_audio_outlined)),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const LaserControl(title: 'Laser Control');
               }));
                 },
-          child: const Text('Laser Control'),
+            tooltip: 'Laser Control'
               ),
 
-          TextButton(
-            style: style,
+          IconButton(
+            alignment: Alignment.center,
+            icon: (const Icon(Icons.info_outline_sharp)),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const ConstellationInfo(title: 'Constellations');
               }));
             },
-            child: const Text('Constellations'),
           ),
+
+
         ],
       ),
        // This trailing comma makes auto-formatting nicer for build methods.
@@ -89,14 +90,25 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 //This is the class for The Laser Device Control page
-class LaserControl extends StatelessWidget {
-  const LaserControl({Key? key, required this.title}) : super(key: key);
+class LaserControl extends StatefulWidget {
+  const LaserControl({super.key, required this.title});
+
   final String title;
+
+  @override
+  State<LaserControl> createState() => LaserControlState();
+}
+
+
+
+//This is the class for The Laser Device Control page
+class LaserControlState extends State<LaserControl> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(widget.title),
       ),
       body: Center(
         child: TextButton(
