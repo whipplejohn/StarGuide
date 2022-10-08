@@ -31,9 +31,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    sqflite: any
-    path_provider: any
-    intl: ^0.15.7
+  sqflite: any
+  path_provider: any
+  intl: ^0.15.7
 
 
 
