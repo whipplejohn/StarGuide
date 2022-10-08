@@ -1,5 +1,4 @@
 //Created model class
-//need to be renamed to star.dart
 
 // note object
 class Stars {
