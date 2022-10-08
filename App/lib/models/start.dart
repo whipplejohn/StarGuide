@@ -1,8 +1,8 @@
 // note object
 class Stars {
-  int _id = 0;
-  String _starName = "";
-  String _description = "";
+  int _id;
+  String _starName;
+  String _description;
 
   // Define Structure
   // to make a new object
