@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const StarGuide());
+}
+
+_launchURLBrowser() async {
+  var url = Uri.parse("http://192.168.4.1");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
 }
 
 class StarGuide extends StatelessWidget {
@@ -14,12 +23,11 @@ class StarGuide extends StatelessWidget {
     return MaterialApp(
       title: 'Laser Star Guide',
       theme: ThemeData(
-          brightness: Brightness.dark,
-          visualDensity: const VisualDensity(horizontal: 2.0, vertical: 2.0),
-          primaryColorLight: const Color(0xff03203C),
-          primaryColorDark: const Color(0xff242B2E),
+        brightness: Brightness.dark,
+        visualDensity: const VisualDensity(horizontal: 2.0, vertical: 2.0),
+        primaryColorLight: const Color(0xff03203C),
+        primaryColorDark: const Color(0xff242B2E),
       ),
-
       home: const MyHomePage(title: 'Laser Star Guide'),
     );
   }
@@ -44,14 +52,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-
   @override
   Widget build(BuildContext context) {
-
     //final ButtonStyle style = TextButton.styleFrom(
     //    foregroundColor: Theme.of(context).colorScheme.onPrimary,
     //);
-
 
     return Scaffold(
       appBar: AppBar(
@@ -59,18 +64,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
         actions: <Widget>[
-
           IconButton(
-
-            icon: (const Icon(Icons.bluetooth_audio_outlined)),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const LaserControl(title: 'Laser Control');
-              }));
-                },
-            tooltip: 'Laser Control'
-              ),
-
+              icon: (const Icon(Icons.bluetooth_audio_outlined)),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const LaserControl(title: 'Laser Control');
+                }));
+              },
+              tooltip: 'Laser Control'),
           IconButton(
             alignment: Alignment.center,
             icon: (const Icon(Icons.info_outline_sharp)),
@@ -80,11 +81,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               }));
             },
           ),
-
-
         ],
       ),
-       // This trailing comma makes auto-formatting nicer for build methods.
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
@@ -99,29 +98,54 @@ class LaserControl extends StatefulWidget {
   State<LaserControl> createState() => LaserControlState();
 }
 
-
-
 //This is the class for The Laser Device Control page
 class LaserControlState extends State<LaserControl> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go Back'),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              Container(
+                height: 250.0,
+              ),
+              const Text(
+                '!-Prepare for Launch-!',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Container(
+                height: 20.0,
+              ),
+              ElevatedButton(
+                onPressed: _launchURLBrowser,
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all(const EdgeInsets.all(5.0)),
+                  textStyle: MaterialStateProperty.all(
+                    const TextStyle(color: Colors.black),
+                  ),
+                ),
+                // textColor: Colors.black,
+                // padding: const EdgeInsets.all(5.0),
+                child: const Text('Enter Control Room'),
+              ),
+              Container(
+                height: 20.0,
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-//test
 
 //This is the class for The Constellation Information page
 class ConstellationInfo extends StatelessWidget {
