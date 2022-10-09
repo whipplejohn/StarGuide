@@ -43,6 +43,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+  Widget textSection = const Padding(
+    padding: EdgeInsets.all(32),
+    child: Text(
+      'Welcome to our Laser Star Guide',
+      softWrap: true,
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,8 +78,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
         ],
       ),
-      body: const Center(
-        child: Text('Hello'),
+      body: ListView(
+        children: [
+          LinearProgressIndicator(),
+          textSection,
+        ],
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Text(
