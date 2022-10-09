@@ -36,15 +36,6 @@ class StarGuide extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -54,10 +45,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    //final ButtonStyle style = TextButton.styleFrom(
-    //    foregroundColor: Theme.of(context).colorScheme.onPrimary,
-    //);
-
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -74,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               tooltip: 'Laser Control'),
           IconButton(
             alignment: Alignment.center,
-            icon: (const Icon(Icons.info_outline_sharp)),
+            icon: (const Icon(Icons.info_rounded)),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const ConstellationInfo(title: 'Constellations');
@@ -83,7 +70,15 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
         ],
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
+      body: const Center(
+        child: Text('Hello'),
+      ),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "Version 1.0.0",
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
@@ -110,6 +105,8 @@ class LaserControlState extends State<LaserControl> {
         child: Center(
           child: Column(
             children: [
+              Image.network(
+                  'https://www.acuitylaser.com/wp-content/uploads/homepage-slider-shutterstock_724314913-1030x688.jpg'),
               Container(
                 height: 250.0,
               ),
@@ -117,12 +114,11 @@ class LaserControlState extends State<LaserControl> {
               const Text(
                 '(Connect to "StarGuide" SSID)',
                 style: TextStyle(
-                  fontSize: 10.0,
+                  fontSize: 20.0,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              const Spacer(),
               const Text(
                 '⚠️ Prepare for Launch ⚠️ ',
                 style: TextStyle(
