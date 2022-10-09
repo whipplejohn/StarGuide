@@ -113,12 +113,22 @@ class LaserControlState extends State<LaserControl> {
               Container(
                 height: 250.0,
               ),
+              const LinearProgressIndicator(),
               const Text(
-                '!-Prepare for Launch-!',
+                '(Connect to "StarGuide" SSID)',
                 style: TextStyle(
-                  fontSize: 30.0,
-                  color: Colors.green,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 10.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const Spacer(),
+              const Text(
+                '⚠️ Prepare for Launch ⚠️ ',
+                style: TextStyle(
+                  fontSize: 35.0,
+                  color: Color.fromARGB(255, 250, 17, 0),
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               Container(
@@ -136,6 +146,11 @@ class LaserControlState extends State<LaserControl> {
                 // padding: const EdgeInsets.all(5.0),
                 child: const Text('Enter Control Room'),
               ),
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+              const LinearProgressIndicator(),
+              const Spacer(),
               Container(
                 height: 20.0,
               ),
