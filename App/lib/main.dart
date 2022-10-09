@@ -201,5 +201,6 @@ class ConstellationInfo extends StatelessWidget {
       ),
     );
   }
+  
 }
 /* */
