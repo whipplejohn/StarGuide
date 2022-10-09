@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Text(
-          "Version 1.0.0",
+          "\nVersion 1.0.0",
           textAlign: TextAlign.center,
         ),
       ),
@@ -154,6 +154,12 @@ class LaserControlState extends State<LaserControl> {
           ),
         ),
       ),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "\nVersion 1.0.0",
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
@@ -174,6 +180,12 @@ class ConstellationInfo extends StatelessWidget {
             Navigator.pop(context);
           },
           child: const Text('Go Back'),
+        ),
+      ),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "\nVersion 1.0.0",
+          textAlign: TextAlign.center,
         ),
       ),
     );
