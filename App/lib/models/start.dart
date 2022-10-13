@@ -1,55 +1,49 @@
-// note object
-class Stars {
-  int _id;
-  String _starName;
-  String _description;
+//create table
+final String tableStars = 'stars';
 
-  // Define Structure
-  // to make a new object
-  Stars(this._starName, [this._description])
-  
-  // Object for id's
-  
-  Stars(this._id, this._starName, [this._description])
-  
-  // getters
-  
-  int get id => _id;
-  String get title => _starName;
-  String get description => _description 
-  
-  //setters
+class StarFields {
+  static final List<String> values = [
+    id, name, description   /* add all fields */
+  ];
+  //representing all of our fields of our model objects
+  static final String id = '_id';
+  static final String name = 'name';
+  static final String description = 'description';
+}
 
-  set title(String newTitle){
-    if (newTitle.length != 0)
-      this._starName = newTitle;
-    else
-      {print('enter a star name');
-      }
-  }
+class Stars{
+  final int? id;
+  final String name;
+  final String description;
 
-  set description(String newDescription){
-    if (description.length != 0)
-      this._description = description;
-    else
-      {print('enter a star name');
-      }
-  }
-  // convert a not object into map object
-  Map<String, dynamic> toMap() {
-    var map = Map<String, dynamic>();
-    if (id != null){
-      map['id'] = _id;
-    }
-    map['title'] = _starName;
-    map['description'] = _description;
-    return map;
-  }
-  //extraction
-  Stars.fromMapObject(Map<String, dynamic> map){
-    this._id - map ['id'];
-    this._starName = map['title'];
-    this._description = map['description'];
-  }
+  const Stars({
+    this.id,
+    required this.name,
+    required this.description
+  });
 
+  //insert 
+  Stars copy({
+    int? id,
+    String? name,
+    String? description
+  }) => 
+      //copy of our current node object
+      Stars(
+        id: id ?? this.id,
+        name: name ?? this.name,
+        description: description ?? this.description
+      );
+
+  static Stars fromJson(Map<String,Object?> json) => Stars(
+      id: json[StarFields.id] as int?,
+      name: json[StarFields.name] as String,
+      description: json[StarFields.description] as String
+      );
+
+  Map<String, Object?> toJson() => {
+    StarFields.id : id,
+    StarFields.name : name, 
+    StarFields.description : description
+  };
 }
