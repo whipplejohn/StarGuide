@@ -1,1 +1,7 @@
 *.DS_Store
+
+# files that get updated depending on the package
+App/pubspec.lock
+.gitignore
+App/ios/Flutter/Debug.xcconfig
+App/ios/Flutter/Release.xcconfig
