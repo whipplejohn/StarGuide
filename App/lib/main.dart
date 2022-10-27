@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const StarGuide());
+}
+
+_launchURLBrowser() async {
+  var url = Uri.parse("http://192.168.4.1");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
 }
 
 class StarGuide extends StatelessWidget {
@@ -14,12 +23,11 @@ class StarGuide extends StatelessWidget {
     return MaterialApp(
       title: 'Laser Star Guide',
       theme: ThemeData(
-          brightness: Brightness.dark,
-          visualDensity: const VisualDensity(horizontal: 2.0, vertical: 2.0),
-          primaryColorLight: const Color(0xff03203C),
-          primaryColorDark: const Color(0xff242B2E),
+        brightness: Brightness.dark,
+        visualDensity: const VisualDensity(horizontal: 2.0, vertical: 2.0),
+        primaryColorLight: const Color(0xff03203C),
+        primaryColorDark: const Color(0xff242B2E),
       ),
-
       home: const MyHomePage(title: 'Laser Star Guide'),
     );
   }
@@ -28,88 +36,165 @@ class StarGuide extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+  // ignore: prefer_final_fields
+  List<Map<String, dynamic>> _allInstructions = [
+    {"id": 1, "name": "Safety", "age": 12},
+    {"id": 2, "name": "Axel", "age": 29},
+    {"id": 3, "name": "Axel", "age": 29},
+    {"id": 4, "name": "Axel", "age": 29},
+  ];
+  Widget textSection = const Padding(
+    padding: EdgeInsets.all(32),
+    child: Text(
+      'Welcome to our Laser Star Guide, Below are the general guidelines ',
+      softWrap: true,
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    final ButtonStyle style = TextButton.styleFrom(
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-    );
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
         actions: <Widget>[
-          TextButton(
-            style: style,
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const LaserControl(title: 'Laser Control');
-              }));
-                },
-          child: const Text('Laser Control'),
-              ),
-
-          TextButton(
-            style: style,
+          IconButton(
+              icon: (const Icon(Icons.bluetooth_audio_outlined)),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const LaserControl(title: 'Laser Control');
+                }));
+              },
+              tooltip: 'Laser Control'),
+          IconButton(
+            alignment: Alignment.center,
+            icon: (const Icon(Icons.info_rounded)),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const ConstellationInfo(title: 'Constellations');
               }));
             },
-            child: const Text('Constellations'),
           ),
         ],
       ),
-       // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-//This is the class for The Laser Device Control page
-class LaserControl extends StatelessWidget {
-  const LaserControl({Key? key, required this.title}) : super(key: key);
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
+      body: ListView.builder(
+        itemCount: _allInstructions.length,
+        itemBuilder: (context, index) => Card(
+          key: ValueKey(_allInstructions[index]["id"]),
+          color: Colors.grey,
+          elevation: 50,
+          margin: const EdgeInsets.symmetric(vertical: 10),
+          child: ListTile(
+            leading: Text(
+              _allInstructions[index]["id"].toString(),
+              style: const TextStyle(fontSize: 24, color: Colors.white),
+            ),
+            title: Text(_allInstructions[index]['name'],
+                style: const TextStyle(color: Colors.white)),
+            subtitle: Text(
+                '${_allInstructions[index]["age"].toString()} years old',
+                style: const TextStyle(color: Colors.white)),
+          ),
+        ),
       ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go Back'),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "\nVersion 1.0.0",
+          textAlign: TextAlign.center,
         ),
       ),
     );
   }
 }
-//test
+
+//This is the class for The Laser Device Control page
+class LaserControl extends StatefulWidget {
+  const LaserControl({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<LaserControl> createState() => LaserControlState();
+}
+
+//This is the class for The Laser Device Control page
+class LaserControlState extends State<LaserControl> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              Image.network(
+                  'https://www.acuitylaser.com/wp-content/uploads/homepage-slider-shutterstock_724314913-1030x688.jpg'),
+              Container(
+                height: 250.0,
+              ),
+              const LinearProgressIndicator(),
+              const Text(
+                '(Connect to "StarGuide" SSID)',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const Text(
+                '⚠️ Prepare for Launch ⚠️ ',
+                style: TextStyle(
+                  fontSize: 35.0,
+                  color: Color.fromARGB(255, 250, 17, 0),
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Container(
+                height: 20.0,
+              ),
+              ElevatedButton(
+                onPressed: _launchURLBrowser,
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all(const EdgeInsets.all(5.0)),
+                  textStyle: MaterialStateProperty.all(
+                    const TextStyle(color: Colors.black),
+                  ),
+                ),
+                // textColor: Colors.black,
+                // padding: const EdgeInsets.all(5.0),
+                child: const Text('Enter Control Room'),
+              ),
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+              const LinearProgressIndicator(),
+              const Spacer(),
+              Container(
+                height: 20.0,
+              ),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "\nVersion 1.0.0",
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+}
 
 //This is the class for The Constellation Information page
 class ConstellationInfo extends StatelessWidget {
@@ -127,6 +212,12 @@ class ConstellationInfo extends StatelessWidget {
             Navigator.pop(context);
           },
           child: const Text('Go Back'),
+        ),
+      ),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "\nVersion 1.0.0",
+          textAlign: TextAlign.center,
         ),
       ),
     );
