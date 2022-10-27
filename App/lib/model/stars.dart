@@ -24,6 +24,7 @@ class Stars{
 
   //insert 
   Stars copy({
+    //pass all values we want to modify
     int? id,
     String? name,
     String? description
@@ -35,6 +36,7 @@ class Stars{
         description: description ?? this.description
       );
 
+  //converst json to star obj
   static Stars fromJson(Map<String,Object?> json) => Stars(
       id: json[StarFields.id] as int?,
       name: json[StarFields.name] as String,
