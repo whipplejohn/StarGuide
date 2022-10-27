@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';    //assuming its part of the bluetooth
+
+// import 'homePage/homeBottomBar.dart';
+import 'homePage/hometopBar.dart';
 
 void main() {
   runApp(const StarGuide());
@@ -22,13 +25,19 @@ class StarGuide extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Laser Star Guide',
+      // ***** Axel work ******
       theme: ThemeData(
         brightness: Brightness.dark,
         visualDensity: const VisualDensity(horizontal: 2.0, vertical: 2.0),
         primaryColorLight: const Color(0xff03203C),
         primaryColorDark: const Color(0xff242B2E),
       ),
-      home: const MyHomePage(title: 'Laser Star Guide'),
+      // home: const MyHomePage(title: 'Laser Star Guide'),
+
+      //***** trying to do mine ****** 
+      // theme: ThemeData.dark(),
+      home: HomeScreen(),
+
     );
   }
 }
@@ -51,7 +60,10 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+//will display the first version
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+  int index = 0;
+  
   @override
   Widget build(BuildContext context) {
     //final ButtonStyle style = TextButton.styleFrom(
@@ -88,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 }
 
-//This is the class for The Laser Device Control page
+// //This is the class for The Laser Device Control page
 class LaserControl extends StatefulWidget {
   const LaserControl({super.key, required this.title});
 
