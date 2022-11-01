@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:axel_software_app/utils/star_tile.dart';
-import 'package:axel_software_app/utils/star_tile1.dart';
-import 'package:axel_software_app/utils/star_tile2.dart';
+import 'package:star_guide/utils/star_tile.dart';
+import 'package:star_guide/utils/star_tile1.dart';
+import 'package:star_guide/utils/star_tile2.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
