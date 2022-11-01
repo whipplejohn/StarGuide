@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
 void main() {
   runApp(const StarGuide());
 }
@@ -217,16 +218,17 @@ class ConstellationInfo extends StatelessWidget {
               ),
               SizedBox(width: 40),
               Text(
-                "Constellations\n Everyone can find",
+                "Constellations\nEveryone can find",
                 style: GoogleFonts.bebasNeue(fontSize: 45),
               ),
             ],
           ),
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            height: 220,
+            height: 450,
             width: double.maxFinite,
             child: Card(
+              semanticContainer: true,
               clipBehavior: Clip.hardEdge,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
@@ -234,24 +236,15 @@ class ConstellationInfo extends StatelessWidget {
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: InkWell(
-                splashColor: Color.fromARGB(255, 247, 244, 244).withAlpha(30),
-                onTap: () {
-                  debugPrint('Card tapped.');
-                },
-                child: const SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Text('Here'),
-                ),
-              ),
+              child: Image.asset('lib/images/db1.png', fit: BoxFit.fill),
             ),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            height: 220,
+            height: 450,
             width: double.maxFinite,
             child: Card(
+              semanticContainer: true,
               clipBehavior: Clip.hardEdge,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
@@ -259,24 +252,15 @@ class ConstellationInfo extends StatelessWidget {
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: InkWell(
-                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
-                onTap: () {
-                  debugPrint('Card tapped.');
-                },
-                child: const SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Text('Here'),
-                ),
-              ),
+              child: Image.asset('lib/images/db2.png', fit: BoxFit.fill),
             ),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            height: 220,
+            height: 450,
             width: double.maxFinite,
             child: Card(
+              semanticContainer: true,
               clipBehavior: Clip.hardEdge,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
@@ -284,24 +268,15 @@ class ConstellationInfo extends StatelessWidget {
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: InkWell(
-                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
-                onTap: () {
-                  debugPrint('Card tapped.');
-                },
-                child: const SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Text('Here'),
-                ),
-              ),
+              child: Image.asset('lib/images/db3.png', fit: BoxFit.fill),
             ),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            height: 220,
+            height: 450,
             width: double.maxFinite,
             child: Card(
+              semanticContainer: true,
               clipBehavior: Clip.hardEdge,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
@@ -309,24 +284,15 @@ class ConstellationInfo extends StatelessWidget {
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: InkWell(
-                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
-                onTap: () {
-                  debugPrint('Card tapped.');
-                },
-                child: const SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Text('Here'),
-                ),
-              ),
+              child: Image.asset('lib/images/db4.png', fit: BoxFit.fill),
             ),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            height: 220,
+            height: 450,
             width: double.maxFinite,
             child: Card(
+              semanticContainer: true,
               clipBehavior: Clip.hardEdge,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
@@ -334,24 +300,15 @@ class ConstellationInfo extends StatelessWidget {
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: InkWell(
-                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
-                onTap: () {
-                  debugPrint('Card tapped.');
-                },
-                child: const SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Text('Here'),
-                ),
-              ),
+              child: Image.asset('lib/images/db5.png', fit: BoxFit.fill),
             ),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            height: 220,
+            height: 450,
             width: double.maxFinite,
             child: Card(
+              semanticContainer: true,
               clipBehavior: Clip.hardEdge,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
@@ -359,24 +316,15 @@ class ConstellationInfo extends StatelessWidget {
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: InkWell(
-                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
-                onTap: () {
-                  debugPrint('Card tapped.');
-                },
-                child: const SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Text('Here'),
-                ),
-              ),
+              child: Image.asset('lib/images/db6.png', fit: BoxFit.fill),
             ),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            height: 220,
+            height: 450,
             width: double.maxFinite,
             child: Card(
+              semanticContainer: true,
               clipBehavior: Clip.hardEdge,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
@@ -384,42 +332,7 @@ class ConstellationInfo extends StatelessWidget {
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
               ),
-              child: InkWell(
-                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
-                onTap: () {
-                  debugPrint('Card tapped.');
-                },
-                child: const SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Text('Here'),
-                ),
-              ),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            height: 220,
-            width: double.maxFinite,
-            child: Card(
-              clipBehavior: Clip.hardEdge,
-              shape: RoundedRectangleBorder(
-                side: BorderSide(
-                  color: Theme.of(context).colorScheme.outline,
-                ),
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
-              ),
-              child: InkWell(
-                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
-                onTap: () {
-                  debugPrint('Card tapped.');
-                },
-                child: const SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Text('Here'),
-                ),
-              ),
+              child: Image.asset('lib/images/db8.png', fit: BoxFit.fill),
             ),
           ),
         ],
