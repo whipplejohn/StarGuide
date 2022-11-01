@@ -1,4 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:axel_software_app/utils/star_tile.dart';
+import 'package:axel_software_app/utils/star_tile1.dart';
+import 'package:axel_software_app/utils/star_tile2.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -21,21 +27,24 @@ class StarGuide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Laser Star Guide',
       theme: ThemeData(
+        fontFamily: 'GoogleFonts.bebasNeue',
         brightness: Brightness.dark,
         visualDensity: const VisualDensity(horizontal: 2.0, vertical: 2.0),
         primaryColorLight: const Color(0xff03203C),
         primaryColorDark: const Color(0xff242B2E),
       ),
-      home: const MyHomePage(title: 'Laser Star Guide'),
+      home: const MyHomePage(
+        title: 'Laser Star Guide',
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
 
   @override
@@ -43,20 +52,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-  Widget textSection = const Padding(
-    padding: EdgeInsets.all(32),
-    child: Text(
-      'Welcome to our Laser Star Guide',
-      softWrap: true,
-    ),
-  );
-
+  // ignore: prefer_final_fields
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
         actions: <Widget>[
           IconButton(
@@ -78,12 +78,26 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
         ],
       ),
-      body: ListView(
-        children: [
-          LinearProgressIndicator(),
-          textSection,
-        ],
-      ),
+      body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: Text(
+            "The New Way of Star Gazing",
+            style: GoogleFonts.bebasNeue(fontSize: 60),
+          ),
+        ),
+        Text(
+            'Welcome to our Laser Star Guide, Below are the general guidelines ',
+            style: GoogleFonts.bebasNeue(fontSize: 15)),
+        const SizedBox(height: 25),
+        Expanded(
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [StarTile(), StarTile1(), StarTile2()],
+          ),
+        ),
+      ]),
       bottomNavigationBar: const BottomAppBar(
         child: Text(
           "\nVersion 1.0.0",
@@ -97,7 +111,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //This is the class for The Laser Device Control page
 class LaserControl extends StatefulWidget {
   const LaserControl({super.key, required this.title});
-
   final String title;
 
   @override
@@ -108,63 +121,70 @@ class LaserControl extends StatefulWidget {
 class LaserControlState extends State<LaserControl> {
   @override
   Widget build(BuildContext context) {
+    var bebasNeue = GoogleFonts.bebasNeue(fontSize: 15);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              Image.network(
-                  'https://www.acuitylaser.com/wp-content/uploads/homepage-slider-shutterstock_724314913-1030x688.jpg'),
-              Container(
-                height: 250.0,
-              ),
-              const LinearProgressIndicator(),
-              const Text(
-                '(Connect to "StarGuide" SSID)',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const Text(
-                '⚠️ Prepare for Launch ⚠️ ',
-                style: TextStyle(
-                  fontSize: 35.0,
-                  color: Color.fromARGB(255, 250, 17, 0),
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              Container(
-                height: 20.0,
-              ),
-              ElevatedButton(
-                onPressed: _launchURLBrowser,
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(const EdgeInsets.all(5.0)),
-                  textStyle: MaterialStateProperty.all(
-                    const TextStyle(color: Colors.black),
-                  ),
-                ),
-                // textColor: Colors.black,
-                // padding: const EdgeInsets.all(5.0),
-                child: const Text('Enter Control Room'),
-              ),
-              const Spacer(),
-              const Spacer(),
-              const Spacer(),
-              const LinearProgressIndicator(),
-              const Spacer(),
-              Container(
-                height: 20.0,
-              ),
-            ],
+      body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          child: Text(
+            "⚠️Launch Control⚠️",
+            style: GoogleFonts.bebasNeue(fontSize: 50),
           ),
         ),
-      ),
+        Text('Have Fun!', style: GoogleFonts.bebasNeue(fontSize: 15)),
+        //const SizedBox(height: 50),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 40.0, bottom: 20),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                Container(
+                  padding: EdgeInsets.all(13),
+                  width: 350,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.black, Colors.white]),
+                      color: Colors.deepOrange[800],
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset('lib/images/image6.jpg'),
+                      ),
+                      const Text("Hello"),
+                      ElevatedButton(
+                        onPressed: _launchURLBrowser,
+                        // ignore: sort_child_properties_last
+                        child: Text(
+                          'Launch',
+                          style: bebasNeue,
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          backgroundColor: Colors.red,
+                          shadowColor: Colors.white,
+                          side: BorderSide(color: Colors.white, width: .7),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 132, vertical: 30),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ]),
       bottomNavigationBar: const BottomAppBar(
         child: Text(
           "\nVersion 1.0.0",
@@ -185,13 +205,223 @@ class ConstellationInfo extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go Back'),
-        ),
+      body: ListView(
+        children: [
+          Row(
+            children: [
+              SizedBox(width: 10),
+              Text(
+                "7",
+                style: GoogleFonts.bebasNeue(fontSize: 110),
+              ),
+              SizedBox(width: 40),
+              Text(
+                "Constellations\n Everyone can find",
+                style: GoogleFonts.bebasNeue(fontSize: 45),
+              ),
+            ],
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 220,
+            width: double.maxFinite,
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: InkWell(
+                splashColor: Color.fromARGB(255, 247, 244, 244).withAlpha(30),
+                onTap: () {
+                  debugPrint('Card tapped.');
+                },
+                child: const SizedBox(
+                  width: 300,
+                  height: 100,
+                  child: Text('Here'),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 220,
+            width: double.maxFinite,
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: InkWell(
+                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
+                onTap: () {
+                  debugPrint('Card tapped.');
+                },
+                child: const SizedBox(
+                  width: 300,
+                  height: 100,
+                  child: Text('Here'),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 220,
+            width: double.maxFinite,
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: InkWell(
+                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
+                onTap: () {
+                  debugPrint('Card tapped.');
+                },
+                child: const SizedBox(
+                  width: 300,
+                  height: 100,
+                  child: Text('Here'),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 220,
+            width: double.maxFinite,
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: InkWell(
+                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
+                onTap: () {
+                  debugPrint('Card tapped.');
+                },
+                child: const SizedBox(
+                  width: 300,
+                  height: 100,
+                  child: Text('Here'),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 220,
+            width: double.maxFinite,
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: InkWell(
+                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
+                onTap: () {
+                  debugPrint('Card tapped.');
+                },
+                child: const SizedBox(
+                  width: 300,
+                  height: 100,
+                  child: Text('Here'),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 220,
+            width: double.maxFinite,
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: InkWell(
+                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
+                onTap: () {
+                  debugPrint('Card tapped.');
+                },
+                child: const SizedBox(
+                  width: 300,
+                  height: 100,
+                  child: Text('Here'),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 220,
+            width: double.maxFinite,
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: InkWell(
+                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
+                onTap: () {
+                  debugPrint('Card tapped.');
+                },
+                child: const SizedBox(
+                  width: 300,
+                  height: 100,
+                  child: Text('Here'),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 220,
+            width: double.maxFinite,
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: InkWell(
+                splashColor: Color.fromARGB(255, 255, 255, 255).withAlpha(30),
+                onTap: () {
+                  debugPrint('Card tapped.');
+                },
+                child: const SizedBox(
+                  width: 300,
+                  height: 100,
+                  child: Text('Here'),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: const BottomAppBar(
         child: Text(
@@ -201,6 +431,5 @@ class ConstellationInfo extends StatelessWidget {
       ),
     );
   }
-  
 }
 /* */
