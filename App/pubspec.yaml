@@ -77,6 +77,16 @@ flutter:
      - lib/images/image4.jpg
      - lib/images/image5.jpg
      - lib/images/image6.jpg
+     - lib/images/db1.png
+     - lib/images/db2.png
+     - lib/images/db3.png
+     - lib/images/db4.png
+     - lib/images/db5.png
+     - lib/images/db6.png
+     - lib/images/db7.png
+     - lib/images/db8.png
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
