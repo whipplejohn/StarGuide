@@ -21,4 +21,41 @@ more instructables videos
 stellarium for database
 - https://stellarium.org/
 
+<<<<<<< HEAD
 https://github.com/gocivici/Star-Track
+=======
+C++ astronomy library
+https://github.com/timmyd7777/SSCore
+
+Research Notes
+
+- https://stellarium.org/
+- https://docs.flutter.dev/get-started/install
+
+Flutter and arduino control
+https://timmcdon4ld.medium.com/using-flutter-and-arduino-to-control-appliances-b8fcd61b220
+
+I liked the robot at one minute in. very similar to what we may be doing. 
+
+https://www.youtube.com/watch?v=bl1e54QGJk4
+
+Some things I found that may help. 
+
+https://www.instructables.com/Arduino-Laser-Show-With-Real-Galvos/
+
+more instructables videos
+- https://www.instructables.com/Arduino-Star-Finder-for-Telescopes/
+- https://www.instructables.com/Star-Track-Arduino-Powered-Star-Pointer-and-Tracke/
+
+stellarium for database
+- https://stellarium.org/
+
+C++ astronomy library
+https://github.com/timmyd7777/SSCore
+
+language translation:
+https://www.youtube.com/watch?v=0S103wExUaE&ab_channel=TheFlutterFactory
+
+Flutter Package
+https://pub.dev/packages/easy_localization
+>>>>>>> origin/main

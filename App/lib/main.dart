@@ -1,8 +1,20 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:star_guide/utils/star_tile.dart';
+import 'package:star_guide/utils/star_tile1.dart';
+import 'package:star_guide/utils/star_tile2.dart';
+
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:url_launcher/url_launcher.dart';    //assuming its part of the bluetooth
 
 // import 'homePage/homeBottomBar.dart';
 import 'homePage/hometopBar.dart';
+=======
+import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
+>>>>>>> origin/main
+
 
 void main() {
   runApp(const StarGuide());
@@ -24,36 +36,34 @@ class StarGuide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Laser Star Guide',
       // ***** Axel work ******
       theme: ThemeData(
+        fontFamily: 'GoogleFonts.bebasNeue',
         brightness: Brightness.dark,
         visualDensity: const VisualDensity(horizontal: 2.0, vertical: 2.0),
         primaryColorLight: const Color(0xff03203C),
         primaryColorDark: const Color(0xff242B2E),
       ),
+<<<<<<< HEAD
       // home: const MyHomePage(title: 'Laser Star Guide'),
 
       //***** trying to do mine ****** 
       // theme: ThemeData.dark(),
       home: HomeScreen(),
 
+=======
+      home: const MyHomePage(
+        title: 'Laser Star Guide',
+      ),
+>>>>>>> origin/main
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -62,18 +72,16 @@ class MyHomePage extends StatefulWidget {
 
 //will display the first version
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+<<<<<<< HEAD
   int index = 0;
   
+=======
+  // ignore: prefer_final_fields
+>>>>>>> origin/main
   @override
   Widget build(BuildContext context) {
-    //final ButtonStyle style = TextButton.styleFrom(
-    //    foregroundColor: Theme.of(context).colorScheme.onPrimary,
-    //);
-
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
         actions: <Widget>[
           IconButton(
@@ -86,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               tooltip: 'Laser Control'),
           IconButton(
             alignment: Alignment.center,
-            icon: (const Icon(Icons.info_outline_sharp)),
+            icon: (const Icon(Icons.info_rounded)),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const ConstellationInfo(title: 'Constellations');
@@ -95,7 +103,32 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
         ],
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
+      body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: Text(
+            "The New Way of Star Gazing",
+            style: GoogleFonts.bebasNeue(fontSize: 60),
+          ),
+        ),
+        Text(
+            'Welcome to our Laser Star Guide, Below are the general guidelines ',
+            style: GoogleFonts.bebasNeue(fontSize: 15)),
+        const SizedBox(height: 25),
+        Expanded(
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [StarTile(), StarTile1(), StarTile2()],
+          ),
+        ),
+      ]),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "\nVersion 1.0.0",
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
@@ -103,7 +136,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 // //This is the class for The Laser Device Control page
 class LaserControl extends StatefulWidget {
   const LaserControl({super.key, required this.title});
-
   final String title;
 
   @override
@@ -114,60 +146,74 @@ class LaserControl extends StatefulWidget {
 class LaserControlState extends State<LaserControl> {
   @override
   Widget build(BuildContext context) {
+    var bebasNeue = GoogleFonts.bebasNeue(fontSize: 15);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              Container(
-                height: 250.0,
-              ),
-              const LinearProgressIndicator(),
-              const Text(
-                '(Connect to "StarGuide" SSID)',
-                style: TextStyle(
-                  fontSize: 10.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const Spacer(),
-              const Text(
-                '⚠️ Prepare for Launch ⚠️ ',
-                style: TextStyle(
-                  fontSize: 35.0,
-                  color: Color.fromARGB(255, 250, 17, 0),
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              Container(
-                height: 20.0,
-              ),
-              ElevatedButton(
-                onPressed: _launchURLBrowser,
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(const EdgeInsets.all(5.0)),
-                  textStyle: MaterialStateProperty.all(
-                    const TextStyle(color: Colors.black),
+      body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          child: Text(
+            "⚠️Launch Control⚠️",
+            style: GoogleFonts.bebasNeue(fontSize: 50),
+          ),
+        ),
+        Text('Have Fun!', style: GoogleFonts.bebasNeue(fontSize: 15)),
+        //const SizedBox(height: 50),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 40.0, bottom: 20),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                Container(
+                  padding: EdgeInsets.all(13),
+                  width: 350,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.black, Colors.white]),
+                      color: Colors.deepOrange[800],
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset('lib/images/image6.jpg'),
+                      ),
+                      const Text("Hello"),
+                      ElevatedButton(
+                        onPressed: _launchURLBrowser,
+                        // ignore: sort_child_properties_last
+                        child: Text(
+                          'Launch',
+                          style: bebasNeue,
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          backgroundColor: Colors.red,
+                          shadowColor: Colors.white,
+                          side: BorderSide(color: Colors.white, width: .7),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 132, vertical: 30),
+                        ),
+                      )
+                    ],
                   ),
                 ),
-                // textColor: Colors.black,
-                // padding: const EdgeInsets.all(5.0),
-                child: const Text('Enter Control Room'),
-              ),
-              const Spacer(),
-              const Spacer(),
-              const Spacer(),
-              const LinearProgressIndicator(),
-              const Spacer(),
-              Container(
-                height: 20.0,
-              ),
-            ],
+              ],
+            ),
           ),
+        ),
+      ]),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "\nVersion 1.0.0",
+          textAlign: TextAlign.center,
         ),
       ),
     );
@@ -184,12 +230,140 @@ class ConstellationInfo extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go Back'),
+      body: ListView(
+        children: [
+          Row(
+            children: [
+              SizedBox(width: 10),
+              Text(
+                "7",
+                style: GoogleFonts.bebasNeue(fontSize: 110),
+              ),
+              SizedBox(width: 40),
+              Text(
+                "Constellations\nEveryone can find",
+                style: GoogleFonts.bebasNeue(fontSize: 45),
+              ),
+            ],
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 450,
+            width: double.maxFinite,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: Image.asset('lib/images/db1.png', fit: BoxFit.fill),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 450,
+            width: double.maxFinite,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: Image.asset('lib/images/db2.png', fit: BoxFit.fill),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 450,
+            width: double.maxFinite,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: Image.asset('lib/images/db3.png', fit: BoxFit.fill),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 450,
+            width: double.maxFinite,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: Image.asset('lib/images/db4.png', fit: BoxFit.fill),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 450,
+            width: double.maxFinite,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: Image.asset('lib/images/db5.png', fit: BoxFit.fill),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 450,
+            width: double.maxFinite,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: Image.asset('lib/images/db6.png', fit: BoxFit.fill),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            height: 450,
+            width: double.maxFinite,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+              ),
+              child: Image.asset('lib/images/db8.png', fit: BoxFit.fill),
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "\nVersion 1.0.0",
+          textAlign: TextAlign.center,
         ),
       ),
     );

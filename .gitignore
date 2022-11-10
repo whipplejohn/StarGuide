@@ -27,6 +27,7 @@ App/pubspec.lock
 .gitignore
 App/ios/Flutter/Debug.xcconfig
 App/ios/Flutter/Release.xcconfig
+<<<<<<< HEAD
 
 
 
@@ -37,3 +38,5 @@ App/ios/Flutter/Release.xcconfig
 # App/ios/Flutter/Debug.xcconfig
 # App/pubspec.lock
 # App/ios/Podfile.lock
+=======
+>>>>>>> origin/main
