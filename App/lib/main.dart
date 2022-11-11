@@ -3,14 +3,24 @@
 import 'package:star_guide/utils/star_tile.dart';
 import 'package:star_guide/utils/star_tile1.dart';
 import 'package:star_guide/utils/star_tile2.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
-void main() {
-  runApp(const StarGuide());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('en', 'US'), Locale('es', 'MX')],
+        path: 'assets/translations',
+        fallbackLocale: Locale('en', 'US'),
+        child: StarGuide()),
+  );
 }
 
 _launchURLBrowser() async {
@@ -75,6 +85,15 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const ConstellationInfo(title: 'Constellations');
+              }));
+            },
+          ),
+          IconButton(
+            alignment: Alignment.center,
+            icon: (const Icon(Icons.settings)),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const Languages(title: 'Languages');
               }));
             },
           ),
@@ -346,4 +365,24 @@ class ConstellationInfo extends StatelessWidget {
     );
   }
 }
-/* */
+
+class Languages extends StatelessWidget {
+  const Languages({Key? key, required this.title}) : super(key: key);
+  final String title;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Center(
+        child: TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go Back'),
+        ),
+      ),
+    );
+  }
+}
