@@ -81,6 +81,7 @@ void notFound(AsyncWebServerRequest *request) {
 }
     String inputMessage;
     String inputParam;
+    char *newline = "\n";
 void setup() {
   Serial.begin(115200);
   
@@ -105,7 +106,7 @@ void setup() {
     }
     // GET input2 value on <ESP_IP>/get?input2=<inputMessage>
     else if (request->hasParam(PARAM_INPUT_2)) {
-      inputMessage = "UP";//request->getParam(PARAM_INPUT_2)->value();
+      inputMessage = request->getParam(PARAM_INPUT_2)->value();
       inputParam = PARAM_INPUT_2;
     }
     // GET input3 value on <ESP_IP>/get?input3=<inputMessage>
@@ -133,7 +134,9 @@ void setup() {
       inputMessage = "No message sent";
       inputParam = "none";
     }
-    Serial.println(inputMessage);
+    inputMessage = inputMessage + newline;
+    Serial.print(inputMessage);
+    
     request->send(200, "text/html", /*"HTTP GET request sent to your ESP on input field (" 
                                      + inputParam + ") with value: " + inputMessage +
                                      "<br><a href=\"/\">Return to Home Page</a>"*/index_html);
@@ -145,6 +148,6 @@ void setup() {
 void loop() {
   
     //Serial.println(inputMessage);
-   // delay(10000);  
+   
   
 }
