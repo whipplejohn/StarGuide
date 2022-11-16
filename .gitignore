@@ -27,3 +27,5 @@ App/pubspec.lock
 .gitignore
 App/ios/Flutter/Debug.xcconfig
 App/ios/Flutter/Release.xcconfig
+*.App/pubspec.lock
+*.App/ios/Podfile.lock

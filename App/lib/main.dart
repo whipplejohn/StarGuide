@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:star_guide/utils/star_tile.dart';
 import 'package:star_guide/utils/star_tile1.dart';
 import 'package:star_guide/utils/star_tile2.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
