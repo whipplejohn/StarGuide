@@ -1,0 +1,18 @@
+{
+    "home_title": "La nueva forma de mirar las estrellas",
+    "home_sub_title": "Bienvenido a nuestra Guía de estrellas láser, a continuación se encuentran las pautas generales.",
+    "step1_card_title": "Paso 1.",
+    "step1_card_body": "La seguridad es lo más importante. Asegúrese de estar en un lugar seguro.\n Use gafas protectoras y no mire directamente al láser!",
+
+    "laser_control": "Control de lanzamiento",
+    "laser_control_subheading": "¡Que te diviertas!",
+    "laser_control_button": "Lanzar!",
+
+    "language": "Selecciona un idioma:",
+    "language_sub_tittle": "Los cambios se aplicarán a todos los \nwidgets de texto de la aplicación.",
+    "language_en_button": "Inglés",
+    "langugae_sp_button": "Español",
+    "langugae_fr_button": "Francés",
+    "langugae_ch_button": "portugués"
+
+}

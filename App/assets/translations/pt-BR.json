@@ -1,0 +1,18 @@
+{
+    "home_title": "A nova maneira de observar as estrelas",
+    "home_sub_title": "Bem-vindo ao nosso guia Laser Star, abaixo estão as diretrizes gerais",
+    "step1_card_title": "Passo 1.",
+    "step1_card_body": "A segurança é o mais importante. Certifique-se de estar em um local seguro.\n\nUse óculos de proteção e não olhe para o lazer de forma perigosa!",
+
+    "laser_control": "Controle de lançamento",
+    "laser_control_subheading": "Divirta-se!",
+    "laser_control_button": "Lançar!",
+
+    "language": "Selecione um idioma:",
+    "language_sub_tittle": "As alterações serão aplicadas a todos os \nwidgets de texto em todo o aplicativo.",
+    "language_en_button": "Inglês",
+    "langugae_sp_button": "Espanhol",
+    "langugae_fr_button": "Francês",
+    "langugae_ch_button": "Português"
+
+}

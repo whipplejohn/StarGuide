@@ -1,0 +1,18 @@
+{
+    "home_title": "The New Way of Star Gazing",
+    "home_sub_title": "Welcome to our Laser Star Guide, Below are the general guidelines",
+    "step1_card_title": "Step 1.",
+    "step1_card_body": "Safety is the most important. Please make sure you are in a safe location.\n\nWear Protective eye wear and dont look at lazer derictly!",
+
+    "laser_control": "Launch Control",
+    "laser_control_subheading": "Have Fun!",
+    "laser_control_button": "Launch!",
+
+    "language": "Select a language:",
+    "language_sub_tittle": "The changes will be applied to all \ntext widgets through out the app.",
+    "language_en_button": "English",
+    "langugae_sp_button": "Spanish",
+    "langugae_fr_button": "French",
+    "langugae_ch_button": "Portuguese"
+
+}
