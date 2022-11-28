@@ -16,7 +16,12 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
-        supportedLocales: const [Locale('en', 'US'), Locale('es', 'MX')],
+        supportedLocales: const [
+          Locale('en', 'US'),
+          Locale('es', 'MX'),
+          Locale('fr', 'FR'),
+          Locale('pt', 'BR')
+        ],
         path: 'assets/translations',
         fallbackLocale: Locale('en', 'US'),
         child: StarGuide()),
@@ -39,6 +44,9 @@ class StarGuide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: context.locale,
+      supportedLocales: context.supportedLocales,
+      localizationsDelegates: context.localizationDelegates,
       debugShowCheckedModeBanner: false,
       title: 'Laser Star Guide',
       theme: ThemeData(
@@ -81,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               tooltip: 'Laser Control'),
           IconButton(
             alignment: Alignment.center,
-            icon: (const Icon(Icons.info_rounded)),
+            icon: (const Icon(Icons.star_outline)),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const ConstellationInfo(title: 'Constellations');
@@ -103,13 +111,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Text(
-            "The New Way of Star Gazing",
+            'home_title'.tr(),
             style: GoogleFonts.bebasNeue(fontSize: 60),
           ),
         ),
-        Text(
-            'Welcome to our Laser Star Guide, Below are the general guidelines ',
-            style: GoogleFonts.bebasNeue(fontSize: 15)),
+        Text('home_sub_title'.tr(), style: GoogleFonts.bebasNeue(fontSize: 15)),
         const SizedBox(height: 25),
         Expanded(
           child: ListView(
@@ -151,18 +157,18 @@ class LaserControlState extends State<LaserControl> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
           child: Text(
-            "⚠️Launch Control⚠️",
-            style: GoogleFonts.bebasNeue(fontSize: 50),
+            'laser_control'.tr(),
+            style: GoogleFonts.bebasNeue(fontSize: 45),
           ),
         ),
-        Text('Have Fun!', style: GoogleFonts.bebasNeue(fontSize: 15)),
+        Text('laser_control_subheading'.tr(),
+            style: GoogleFonts.bebasNeue(fontSize: 15)),
         //const SizedBox(height: 50),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.only(left: 40.0, bottom: 20),
+            padding: const EdgeInsets.only(left: 20.0, bottom: 15),
             child: ListView(
               scrollDirection: Axis.horizontal,
-              // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Container(
                   padding: EdgeInsets.all(13),
@@ -171,7 +177,7 @@ class LaserControlState extends State<LaserControl> {
                       gradient: LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
-                          colors: [Colors.black, Colors.white]),
+                          colors: const [Colors.black, Colors.white]),
                       color: Colors.deepOrange[800],
                       borderRadius: BorderRadius.circular(20)),
                   child: Column(
@@ -179,14 +185,16 @@ class LaserControlState extends State<LaserControl> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20),
-                        child: Image.asset('lib/images/image6.jpg'),
+                        child: Image.asset('lib/images/image4.jpg'),
                       ),
-                      const Text("Hello"),
+                      SizedBox(
+                        height: 5,
+                      ),
                       ElevatedButton(
                         onPressed: _launchURLBrowser,
                         // ignore: sort_child_properties_last
                         child: Text(
-                          'Launch',
+                          'laser_control_button'.tr(),
                           style: bebasNeue,
                         ),
                         style: ElevatedButton.styleFrom(
@@ -195,7 +203,7 @@ class LaserControlState extends State<LaserControl> {
                           shadowColor: Colors.white,
                           side: BorderSide(color: Colors.white, width: .7),
                           padding: EdgeInsets.symmetric(
-                              horizontal: 132, vertical: 30),
+                              horizontal: 132, vertical: 25),
                         ),
                       )
                     ],
@@ -375,12 +383,74 @@ class Languages extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go Back'),
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: ListView(
+          children: [
+            Row(
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      'language'.tr(),
+                      style: GoogleFonts.bebasNeue(fontSize: 55),
+                    ),
+                    Text(
+                      'language_sub_tittle'.tr(),
+                      style: GoogleFonts.bebasNeue(fontSize: 18),
+                      textAlign: TextAlign.center,
+                    )
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 50),
+            ElevatedButton(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: BorderSide(color: Colors.red)))),
+              onPressed: () => context.setLocale(Locale('en', 'US')),
+              child: Text('language_en_button'.tr()),
+            ),
+            SizedBox(height: 5),
+            ElevatedButton(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: BorderSide(color: Colors.red)))),
+              onPressed: () => context.setLocale(Locale('es', 'MX')),
+              child: Text('langugae_sp_button'.tr()),
+            ),
+            SizedBox(height: 5),
+            ElevatedButton(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: BorderSide(color: Colors.red)))),
+              onPressed: () => context.setLocale(Locale('fr', 'FR')),
+              child: Text('langugae_fr_button'.tr()),
+            ),
+            SizedBox(height: 5),
+            ElevatedButton(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: BorderSide(color: Colors.red)))),
+              onPressed: () => context.setLocale(Locale('pt', 'BR')),
+              child: Text('langugae_ch_button'.tr()),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: const BottomAppBar(
+        child: Text(
+          "\nVersion 1.0.0",
+          textAlign: TextAlign.center,
         ),
       ),
     );
