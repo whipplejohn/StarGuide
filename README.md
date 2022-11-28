@@ -1,7 +1,10 @@
 # StarGuide
 This project consists of a few different parts
 
-There is the device and the related arduino/ESP8266 c++ code
+The device and the related arduino/ESP8266 c++ code
+
+The device consists of 3D printed parts and is controlled by stepper motors
+To edit the code for this piece download arduino IDE and the related c++ files (This can be found in the more code section)
 
 The App connects to the device and is the hub for StarGuide
 
