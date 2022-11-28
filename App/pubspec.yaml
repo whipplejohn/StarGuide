@@ -86,6 +86,7 @@ flutter:
      - lib/images/db6.png
      - lib/images/db7.png
      - lib/images/db8.png
+     - assets/translations/
 
 
 
