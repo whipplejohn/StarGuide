@@ -4,11 +4,19 @@
     "step1_card_title": "Passo 1.",
     "step1_card_body": "A segurança é o mais importante. Certifique-se de estar em um local seguro.\n\nUse óculos de proteção e não olhe para o lazer de forma perigosa!",
 
+    "step2_card_title": "Passo 2.",
+    "step2_card_body": "A lei federal dos Estados Unidos tornou ilegal apontar um feixe de laser para a trajetória de voo de uma aeronave ou aeronave, incluindo um helicóptero, avião e até mesmo um drone. Certifique-se clicando abaixo:",
+
+    "step3_card_title": "Passo 3.",
+    "step3_card_body": "Finalmente! Vá para as configurações de wi-fi do telefone e conecte-se ao SSID ''Star Guide'', uma vez conectado, você pode começar a controlar o dispositivo. Apreciar!",
+
     "laser_control": "Controle de lançamento",
     "laser_control_subheading": "Divirta-se!",
-    "laser_control_button": "Lançar!",
+    "laser_control_button": "Go!",
 
-    "language": "Selecione um idioma:",
+    "constellation_title": "Constelações Todos\n podem encontrar",
+
+    "language": "Selecione um\n idioma:",
     "language_sub_tittle": "As alterações serão aplicadas a todos os \nwidgets de texto em todo o aplicativo.",
     "language_en_button": "Inglês",
     "langugae_sp_button": "Espanhol",
