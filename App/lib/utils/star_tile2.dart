@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class StarTile2 extends StatelessWidget {
   const StarTile2({super.key});
@@ -9,7 +10,7 @@ class StarTile2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 25.0, bottom: 25),
+      padding: const EdgeInsets.only(left: 25.0, bottom: 25, right: 25),
       child: Container(
         padding: const EdgeInsets.all(12),
         width: 250,
@@ -24,12 +25,11 @@ class StarTile2 extends StatelessWidget {
               child: Image.asset('lib/images/image3.jpg'),
             ),
             Text(
-              'Step 3.',
+              'step3_card_title'.tr(),
               style: GoogleFonts.bebasNeue(fontSize: 25),
             ),
-            Text(
-                "Safety is the most important. Please make sure you are in a safe location.\n\nWear Protective eye wear and dont look at lazer derictly!",
-                style: GoogleFonts.bebasNeue(fontSize: 10)),
+            Text('step3_card_body'.tr(),
+                style: GoogleFonts.bebasNeue(fontSize: 22)),
           ],
         ),
       ),
