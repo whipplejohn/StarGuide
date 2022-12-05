@@ -1,26 +1,27 @@
 {
-    "home_title": "La nouvelle façon d'observer les étoiles",
-    "home_sub_title": "Bienvenue dans notre guide Laser Star, voici les directives générales",
-    "step1_card_title": "Étape 1.",
-    "step1_card_body": "La sécurité est le plus important. Veuillez vous assurer que vous êtes dans un endroit sûr.\n\nPortez des lunettes de protection et ne regardez pas le laser de manière déraisonnable !",
+    "home_title": "La nueva forma de mirar las estrellas",
+    "home_sub_title": "Bienvenido a nuestra Guía de estrellas láser, a continuación se encuentran las pautas generales.",
+    "step1_card_title": "Paso 1.",
+    "step1_card_body": "La seguridad es lo más importante. Asegúrese de estar en un lugar seguro.\n Use gafas protectoras y no mire directamente al láser!",
 
-    "step2_card_title": "Étape 2.",
-    "step2_card_body": "La loi fédérale des États-Unis a rendu illégal le pointage d'un faisceau laser \nsur la trajectoire de vol d'un aéronef ou d'un aéronef, y compris \nun hélicoptère, un avion et même un drone. Veuillez vous assurer en cliquant ci-dessous :",
+    "step2_card_title": "Paso 2.",
+    "step2_card_body": "La ley federal en los Estados Unidos ha declarado ilegal apuntar un rayo láser \na la trayectoria de vuelo de un avión o una aeronave, incluidos \na un helicóptero, un avión e incluso un dron. Asegúrese de hacer clic a continuación:",
 
-    "step3_card_title": "Étape 3.",
-    "step3_card_body": "Enfin ! Accédez aux paramètres Wi-Fi du téléphone et connectez-vous au SSID '' Star Guide ''. Une fois connecté, vous pouvez commencer à contrôler l'appareil. Prendre plaisir!",
+    "step3_card_title": "Paso 3.",
+    "step3_card_body": "¡Finalmente! Vaya a la configuración wifi de los teléfonos y conéctese al SSID de la ''Guía de estrellas'''. Una vez conectado, puede comenzar a controlar el dispositivo. ¡Disfrutar!",
 
-    "laser_control": "Contrôle de lancement",
-    "laser_control_subheading": "S'amuser!",
-    "laser_control_button": "Go!",
+    "laser_control": "Control de lanzamiento",
+    "laser_control_subheading": "¡Que te diviertas!",
+    "laser_control_button": "Lanzar!",
 
-    "constellation_title": "Constellations\n que vous pouvez\n trouver",
+    "constellation_title": "Constelaciones\nTodos pueden hallar",
 
-    "language": "Sélectionnez une\n langue:",
-    "language_sub_tittle": "Les modifications seront appliquées à tous les widgets \ntexte dans l'application.",
-    "language_en_button": "Anglais",
-    "langugae_sp_button": "Espagnol",
-    "langugae_fr_button": "Français",
-    "langugae_ch_button": "Portugais"
+
+    "language": "Selecciona un\n idioma:",
+    "language_sub_tittle": "Los cambios se aplicarán a todos los \nwidgets de texto de la aplicación.",
+    "language_en_button": "Inglés",
+    "langugae_sp_button": "Español",
+    "langugae_fr_button": "Francés",
+    "langugae_ch_button": "portugués"
 
 }
