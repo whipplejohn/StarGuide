@@ -10,12 +10,12 @@ class StarTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 25.0, bottom: 25),
+      padding: const EdgeInsets.only(left: 25.0, bottom: 25, right: 25.0),
       child: Container(
         padding: const EdgeInsets.all(12),
         width: 250,
         decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 44, 62, 251),
+            color: Colors.deepOrange[800],
             borderRadius: BorderRadius.circular(12)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +30,7 @@ class StarTile extends StatelessWidget {
             ),
             Text(
               'step1_card_body'.tr(),
-              style: GoogleFonts.bebasNeue(fontSize: 10),
+              style: GoogleFonts.bebasNeue(fontSize: 22),
             ),
           ],
         ),
