@@ -10,7 +10,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
@@ -80,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: Text(widget.title),
         actions: <Widget>[
           IconButton(
-              icon: (const Icon(Icons.bluetooth_audio_outlined)),
+              icon: (const Icon(Icons.wifi)),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return const LaserControl(title: 'Laser Control');
@@ -107,19 +106,27 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
         ],
       ),
-      body: Column(children: [
+      body: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Text(
             'home_title'.tr(),
             style: GoogleFonts.bebasNeue(fontSize: 60),
+            textAlign: TextAlign.center,
           ),
         ),
-        Text('home_sub_title'.tr(), style: GoogleFonts.bebasNeue(fontSize: 15)),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: Text(
+            'home_sub_title'.tr(),
+            style: GoogleFonts.bebasNeue(fontSize: 25),
+            textAlign: TextAlign.center,
+          ),
+        ),
         const SizedBox(height: 25),
         Expanded(
           child: ListView(
-            scrollDirection: Axis.horizontal,
+            scrollDirection: Axis.vertical,
             // ignore: prefer_const_literals_to_create_immutables
             children: [StarTile(), StarTile1(), StarTile2()],
           ),
@@ -153,12 +160,13 @@ class LaserControlState extends State<LaserControl> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(children: [
+      body: Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
           child: Text(
             'laser_control'.tr(),
             style: GoogleFonts.bebasNeue(fontSize: 45),
+            textAlign: TextAlign.center,
           ),
         ),
         Text('laser_control_subheading'.tr(),
@@ -166,9 +174,9 @@ class LaserControlState extends State<LaserControl> {
         //const SizedBox(height: 50),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.only(left: 20.0, bottom: 15),
+            padding: const EdgeInsets.only(left: 20.0, bottom: 5, right: 20.0),
             child: ListView(
-              scrollDirection: Axis.horizontal,
+              scrollDirection: Axis.vertical,
               children: [
                 Container(
                   padding: EdgeInsets.all(13),
@@ -203,7 +211,7 @@ class LaserControlState extends State<LaserControl> {
                           shadowColor: Colors.white,
                           side: BorderSide(color: Colors.white, width: .7),
                           padding: EdgeInsets.symmetric(
-                              horizontal: 132, vertical: 25),
+                              horizontal: 152, vertical: 25),
                         ),
                       )
                     ],
@@ -245,7 +253,7 @@ class ConstellationInfo extends StatelessWidget {
               ),
               SizedBox(width: 40),
               Text(
-                "Constellations\nEveryone can find",
+                'constellation_title'.tr(),
                 style: GoogleFonts.bebasNeue(fontSize: 45),
               ),
             ],
@@ -393,7 +401,7 @@ class Languages extends StatelessWidget {
                   children: [
                     Text(
                       'language'.tr(),
-                      style: GoogleFonts.bebasNeue(fontSize: 55),
+                      style: GoogleFonts.bebasNeue(fontSize: 50),
                     ),
                     Text(
                       'language_sub_tittle'.tr(),
