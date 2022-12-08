@@ -25,7 +25,7 @@ Project Contributions
 Zack:
 
 
-Axel:
+Axel: Personal Contributions were mostly within the app development. I spent a few weeks learning Flutter and Dart. After becoming an amateur on the software, my focus was centered on developing the app. From the app foundation that Zack developed, I developed the UI for the Home Page, Control Page, Constellation Page, and Settings Page. Helped with the integration of our physical laser into our app. I developed the multilangual feature that our client wanted by storing translations into JSON objects and calling those objects on button presses. Was directly involved in the client meetings and group study sessions.
 
 
 Ethan:
