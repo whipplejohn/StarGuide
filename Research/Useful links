@@ -55,3 +55,41 @@ https://www.youtube.com/watch?v=0S103wExUaE&ab_channel=TheFlutterFactory
 
 Flutter Package
 https://pub.dev/packages/easy_localization
+
+Law
+https://www.faa.gov/about/initiatives/lasers/law_enforcement_guidance
+
+Plane paths 
+https://flightaware.com
+
+Will the laser intersect the flight path of a plane? 
+how would we know? 
+is there a failsafe that can be installed?
+For this we may need the celestial coordinates to draw a line from the device to the star and ask if that line intersects the flight path of a plane? It would be more than that it would be the path that the laser draws between those points. This is open to debate and speculation. but is a start for a conversation on how to address the issue. 
+
+Visible laser spectrum 
+https://phc.amedd.army.mil/PHC%20Resource%20Library/Laser%20Pointer%20FS_24-031-0617.pdf
+
+laser modules
+https://www.amazon.com/green-laser-pointer-532nm-5mw/s?k=green+laser+pointer+532nm+5mw
+
+text software 
+https://www.techradar.com/news/the-best-free-text-to-speech-software
+
+Do you need a better bluetooth module? Or is wifi the way to go? 
+https://www.amazon.com/bluetooth-module/s?k=bluetooth+module
+Here are a few sites that may help with the future of the project. 
+
+We have an observatory and they may be able to advise on how to find the stars more precisely. https://grandmesaobservatory.com/who-we-are
+Reaching out to them may be beneficial. 
+
+The following links are about celestial coordinates. 
+https://www.constellation-guide.com/big-dipper/
+https://www.wikihow.com/Find-a-Star
+https://skyandtelescope.org/astronomy-resources/right-ascension-declination-celestial-coordinates/
+https://en.wikipedia.org/wiki/Astronomical_coordinate_systems
+https://www.austincc.edu/jheath/Stellar/Hand/ccord.htm
+https://en.wikipedia.org/wiki/Big_Dipper
+https://en.wikipedia.org/wiki/Ursa_Major
+
+
