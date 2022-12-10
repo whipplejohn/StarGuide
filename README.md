@@ -27,7 +27,7 @@ Zack: I communicated with the client, created and managed github repo, created t
 Axel: Personal Contributions were mostly within the app development. I spent a few weeks learning Flutter and Dart. After becoming an amateur on the software, my focus was centered on developing the app. From the app foundation that Zack developed, I developed the UI for the Home Page, Control Page, Constellation Page, and Settings Page. Helped with the integration of our physical laser into our app. I developed the multilangual feature that our client wanted by storing translations into JSON objects and calling those objects on button presses. Was directly involved in the client meetings and group study sessions.
 
 
-Ethan:
+Ethan: I developed and built both the goto laser, as well as the laser projector. I used tinkercad for the 3d printed parts. I sourced all the electornic componets needed to build the project. Made a comprehnsive build guide and a circuit diagram for the eletronics. I also did a lot of research on the constellations, trying to understand star coordinates, and how to align the device as such. I used arduino to operate the device and using an esp8266 we could then send signals remotely from any phone to the arduino to control the device.
 
 
 Eddy:
