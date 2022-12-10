@@ -12,9 +12,11 @@ The App connects to the device and is the hub for StarGuide
 To get the app running, have either android studio or vscode installed and running on your device.
 You will also need to download flutter and have a smartphone emulator.
 
-[flutter install link]:https://docs.flutter.dev/get-started/install
+[flutter install link](https://docs.flutter.dev/get-started/install)
 
 Once you have those things clone this github into there and you can run the app from the main.dart file.
+
+If you need further guidance check the build guide, circuit diagram, app setup guide and in research there are lots of useful links related to this project.
 
 ![image](https://user-images.githubusercontent.com/89491308/204365442-2011098f-0a64-4aa2-a758-9486ca69ab87.png)
 
