@@ -22,8 +22,7 @@ Once you have those things clone this github into there and you can run the app 
 Project Contributions
 
 
-Zack:
-
+Zack: I communicated with the client, created and managed github repo, created the foundation for the flutter app, helped with development of the flutter app including the control page. I developed the code to connect the app side to the device, using esp8266 and c++ code with the arduino editor. I also helped develop some of the code to control the goto laser and the laser galvos. I helped do research and development of a lot of the different components to the project. This includes laws and ethics, flutter libraries, arduino and esp libraries, and some other related things. Aside from technical contributions I helped schedule meeting times for the group and tried to make sure we were on track.
 
 Axel: Personal Contributions were mostly within the app development. I spent a few weeks learning Flutter and Dart. After becoming an amateur on the software, my focus was centered on developing the app. From the app foundation that Zack developed, I developed the UI for the Home Page, Control Page, Constellation Page, and Settings Page. Helped with the integration of our physical laser into our app. I developed the multilangual feature that our client wanted by storing translations into JSON objects and calling those objects on button presses. Was directly involved in the client meetings and group study sessions.
 
