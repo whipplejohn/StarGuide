@@ -35,7 +35,7 @@ Ethan: I developed and built both the goto laser, as well as the laser projector
 Eddy:
 
 
-Ezequiel:
+Ezequiel: I help research all the math. I also did help do the research for the data base and worked on it until we figured out it wasn't compatile with dart. I did a lot of resreach as well some work on the code to connect and control the laser. With that I had to do a lot of constelation research. I help build and research the parts the shoul be used on our laser. I was involved in every group study session and client meeting, I also helped get some of the testing done and got students to try out app.
 
 
 
