@@ -32,13 +32,7 @@ Axel: Personal Contributions were mostly within the app development. I spent a f
 Ethan: I developed and built both the goto laser, as well as the laser projector. I used tinkercad for the 3d printed parts. I sourced all the electornic componets needed to build the project. Made a comprehnsive build guide and a circuit diagram for the eletronics. I also did a lot of research on the constellations, trying to understand star coordinates, and how to align the device as such. I used arduino to operate the device and using an esp8266 we could then send signals remotely from any phone to the arduino to control the device.
 
 
-Eddy:
+Eddy: I developed and did research on the databases that we created. I also did research on the star coordinates. The first few weeks I mostly spend reading and understanding the books that the client provided. After that I spent the time building a CRUD database with Ezequiel. We first started building one on the app then we tried building one independently (by scratch). By doing so it help further our understanding in flutter and our knowledge with the database.
 
 
 Ezequiel: I help research all the math. I also did help do the research for the data base and worked on it until we figured out it wasn't compatile with dart. I did a lot of resreach as well some work on the code to connect and control the laser. With that I had to do a lot of constelation research. I help build and research the parts the shoul be used on our laser. I was involved in every group study session and client meeting, I also helped get some of the testing done and got students to try out app.
-
-
-
-
-
-
